@@ -26,3 +26,15 @@ spec:
         ports:
         - containerPort: 3000
           protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecsdemo-crystal
+spec:
+  selector:
+    app: ecsdemo-crystal
+  ports:
+   -  protocol: TCP
+      port: 80
+      targetPort: 3000
